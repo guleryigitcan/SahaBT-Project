@@ -2,6 +2,8 @@ package com.example.book.domain;
 
 import java.util.Objects;
 
+import com.example.domain.Category;
+
 public class Book {
 
 	private final Isbn isbn;
