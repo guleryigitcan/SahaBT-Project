@@ -32,5 +32,9 @@
 			<attribute name="m2e-apt" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="src" path="/stock-subdomain"/>
+	<classpathentry kind="src" path="/bookstore"/>
+	<classpathentry kind="src" path="/book-domain"/>
+	<classpathentry kind="src" path="/customer-domain"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
