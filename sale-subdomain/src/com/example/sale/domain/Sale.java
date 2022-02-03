@@ -3,7 +3,7 @@ package com.example.sale.domain;
 import java.awt.print.Book;
 import java.util.Objects;
 
-import com.example.domain.Customer;
+import com.example.customer.domain.Customer;
 
 public class Sale {
 
