@@ -17,21 +17,8 @@ public class Book {
 	private Reviews reviews;
 	private Category category;
 
-	public Book(Isbn isbn, Title title, Author author, Publisher publisher, Edition edition,
-			PublicationYear publicationYear, Price price, Contents contents, CoverPhoto coverPhoto,
-			Popularity popularity, Reviews reviews, Category category) {
+	public Book(Isbn isbn) {
 		this.isbn = isbn;
-		this.title = title;
-		this.author = author;
-		this.publisher = publisher;
-		this.edition = edition;
-		this.publicationYear = publicationYear;
-		this.price = price;
-		this.contents = contents;
-		this.coverPhoto = coverPhoto;
-		this.popularity = popularity;
-		this.reviews = reviews;
-		this.category = category;
 	}
 
 	public Title getTitle() {
@@ -141,6 +128,49 @@ public class Book {
 			return false;
 		Book other = (Book) obj;
 		return Objects.equals(isbn, other.isbn);
+	}
+
+	public static class Builder {
+
+		private Isbn isbn;
+		private Title title;
+		private Author author;
+		private Publisher publisher;
+		private Edition edition;
+		private PublicationYear publicationYear;
+		private Price price;
+		private Contents contents;
+		private CoverPhoto coverPhoto;
+		private Popularity popularity;
+		private Reviews reviews;
+		private Category category;
+
+		public Builder isbn(String value) {
+			this.isbn = Isbn.of(value);
+			return this;
+		}
+
+		public Builder publicationYear(int value) {
+			this.publicationYear = PublicationYear.of(value);
+			return this;
+		}
+
+		public Builder price(double value) {
+			this.price = Price.of(value);
+			return this;
+		}
+
+		public Builder popularity(double value) {
+			this.price = Price.of(value);
+			return this;
+		}
+
+		public Book build() {
+			var book = new Book(isbn, title, author, publisher, edition, publicationYear, price, contents, coverPhoto,
+					popularity, reviews, category);
+			return book;
+		}
+
 	}
 
 	@Override

@@ -32,6 +32,11 @@
 		</dependency>
 		<dependency>
 			<groupId>com.example</groupId>
+			<artifactId>book-domain</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.example</groupId>
 			<artifactId>order-subdomain</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>

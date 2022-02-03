@@ -2,6 +2,8 @@ package com.example.stock.domain;
 
 import java.util.Objects;
 
+import com.example.book.domain.Isbn;
+
 public class Stock {
 	private final StockKeepingUnit sku;
 	private final Isbn isbn;
