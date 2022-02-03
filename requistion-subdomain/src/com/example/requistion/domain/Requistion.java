@@ -6,20 +6,21 @@ import com.example.book.domain.Isbn;
 import com.example.publisher.domain.Publisher;
 
 public class Requistion {
-
-	private final RequistionID requistionID;
-	private final Isbn isbn;
+	
+	private RequistionId requistionId;
+	private Isbn isbn;
 	private Publisher publisher;
-
-	private Requistion(RequistionID requistionID, Isbn isbn, Publisher publisher) {
-		this.requistionID = requistionID;
+	
+	public Requistion(RequistionId requistionId, Isbn isbn, Publisher publisher) {
+		this.requistionId = requistionId;
 		this.isbn = isbn;
 		this.publisher = publisher;
 	}
 
-	public RequistionID getRequistionID() {
-		return requistionID;
+	public RequistionId getRequistionId() {
+		return requistionId;
 	}
+
 
 	public Isbn getIsbn() {
 		return isbn;
@@ -29,9 +30,13 @@ public class Requistion {
 		return publisher;
 	}
 
+	public void setPublisher(Publisher publisher) {
+		this.publisher = publisher;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(isbn, requistionID);
+		return Objects.hash(isbn, requistionId);
 	}
 
 	@Override
@@ -43,33 +48,39 @@ public class Requistion {
 		if (getClass() != obj.getClass())
 			return false;
 		Requistion other = (Requistion) obj;
-		return Objects.equals(isbn, other.isbn) && Objects.equals(requistionID, other.requistionID);
+		return Objects.equals(isbn, other.isbn) && Objects.equals(requistionId, other.requistionId);
 	}
 
 	@Override
 	public String toString() {
-		return "Requistion [requistionID=" + requistionID + ", isbn=" + isbn + ", publisher=" + publisher + "]";
+		return "Requistion [requistionId=" + requistionId + ", isbn=" + isbn + "]";
 	}
-
-	public static class Builder {
-		private RequistionID requistionID;
+	
+	public static class Builder{
+		private RequistionId requistionId;
 		private Isbn isbn;
 		private Publisher publisher;
-
+		
 		public Builder requistionId(String value) {
-			this.requistionID = RequistionID.of(value);
+			this.requistionId=RequistionId.of(value);
 			return this;
 		}
-
+		
 		public Builder isbn(String value) {
-			this.isbn = Isbn.of(value);
+			this.isbn=Isbn.of(value);
 			return this;
 		}
-
-		public Builder publisher(String value) {
-			this.publisher = Publisher.of(value);
-			return this;
+		
+		public Requistion build() {
+			var requistion=new Requistion(requistionId, isbn, publisher);
+			return requistion;
 		}
+	
+		
 	}
+	
+	
+	
+	
 
 }

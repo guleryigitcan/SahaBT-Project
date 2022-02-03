@@ -1,14 +1,13 @@
-package com.example.requistion.domain;
+package com.example.publisher.domain;
 
 import java.util.Objects;
 
 
-
-public final class RequistionId {
+public final class PublisherId {
 	
 	private final String value;
 
-	public RequistionId(String value) {
+	public PublisherId(String value) {
 		this.value = value;
 	}
 
@@ -16,12 +15,12 @@ public final class RequistionId {
 		return value;
 	}
 	
-	public static RequistionId of(String value) {
+	public static PublisherId of(String value) {
 		if (!isValid(value))
-			throw new IllegalArgumentException("This is not a valid Requistion Id");
-		return new RequistionId(value);
+			throw new IllegalArgumentException("This is not a valid PublisherId");
+		return new PublisherId(value);
 	}
-
+	
 	private static boolean isValid(String value) {
 		return value.matches("^[a-z0-9A-Z]{10,20}$");
 	}
@@ -39,14 +38,15 @@ public final class RequistionId {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		RequistionId other = (RequistionId) obj;
+		PublisherId other = (PublisherId) obj;
 		return Objects.equals(value, other.value);
 	}
 
 	@Override
 	public String toString() {
-		return "RequistionId [value=" + value + "]";
+		return "PublisherId [value=" + value + "]";
 	}
 	
 	
+
 }

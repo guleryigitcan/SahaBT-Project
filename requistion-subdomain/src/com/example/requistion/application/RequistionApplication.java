@@ -5,5 +5,5 @@ import com.example.requistion.domain.Requistion;
 public interface RequistionApplication {
 	
 	Requistion requistionAdd(Requistion requistionID);
-	Requistion requistionDelete(Requistion requistionID);
+
 }
