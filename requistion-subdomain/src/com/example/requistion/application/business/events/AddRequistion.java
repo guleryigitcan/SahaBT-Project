@@ -2,7 +2,7 @@ package com.example.requistion.application.business.events;
 
 import com.example.requistion.domain.Requistion;
 
-public class AddRequistion {
+public class AddRequistion extends RequistionEvent{
 
 	private final Requistion requistion;
 
