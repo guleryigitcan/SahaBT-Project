@@ -1,5 +1,9 @@
 package com.example.sale.application;
 
-public class SaleApplication {
+import com.example.sale.domain.Sale;
+
+public interface SaleApplication {
+
+	Sale add(Sale sale);
 
 }
