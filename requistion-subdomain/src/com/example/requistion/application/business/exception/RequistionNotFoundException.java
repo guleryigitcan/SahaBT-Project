@@ -1,6 +1,7 @@
 package com.example.requistion.application.business.exception;
 
-public class RequistionNotFoundException extends RuntimeException{
+@SuppressWarnings("serial")
+public class RequistionNotFoundException extends RuntimeException {
 
 	private final String requistionId;
 
@@ -11,6 +12,5 @@ public class RequistionNotFoundException extends RuntimeException{
 	public String getRequistionId() {
 		return requistionId;
 	}
-	
-	
+
 }

@@ -1,10 +1,8 @@
 package com.example.requistion.infrastructure;
 
-import com.example.requistion.application.business.events.AddRequistion;
-import com.example.requistion.application.business.events.DeleteRequistion;
+import com.example.requistion.application.business.events.RequistionEvent;
 
 public interface EventPublisher {
 
-	void publishEvent(AddRequistion businessEvent);
-    void publishEvent(DeleteRequistion businessEvent);
+	void publishEvent(RequistionEvent businessEvent);
 }

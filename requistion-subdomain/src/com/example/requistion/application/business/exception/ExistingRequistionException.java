@@ -1,6 +1,7 @@
 package com.example.requistion.application.business.exception;
 
-public class ExistingRequistionException extends RuntimeException{
+@SuppressWarnings("serial")
+public class ExistingRequistionException extends RuntimeException {
 
 	private final String requistionId;
 
@@ -11,5 +12,5 @@ public class ExistingRequistionException extends RuntimeException{
 	public String getRequistionId() {
 		return requistionId;
 	}
-	
+
 }
