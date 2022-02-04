@@ -2,6 +2,9 @@ package com.example.book.domain;
 
 import java.util.Objects;
 
+import com.example.domain.Category;
+import com.example.publisher.domain.Publisher;
+
 public class Book {
 
 	private final Isbn isbn;
@@ -166,8 +169,18 @@ public class Book {
 		}
 
 		public Book build() {
-			var book = new Book(isbn, title, author, publisher, edition, publicationYear, price, contents, coverPhoto,
-					popularity, reviews, category);
+			var book = new Book(this.isbn);
+			book.setTitle(title);
+			book.setAuthor(author);
+			book.setPublisher(publisher);
+			book.setEdition(edition);
+			book.setPublicationYear(publicationYear);
+			book.setPrice(price);
+			book.setContents(contents);
+			book.setCoverPhoto(coverPhoto);
+			book.setPopularity(popularity);
+			book.setReviews(reviews);
+			book.setCategory(category);
 			return book;
 		}
 

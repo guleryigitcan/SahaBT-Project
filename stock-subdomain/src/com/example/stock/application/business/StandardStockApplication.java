@@ -5,6 +5,7 @@ import com.example.stock.application.StockApplication;
 import com.example.stock.application.business.events.StockAddedEvent;
 import com.example.stock.application.business.events.StockUpdatedEvent;
 import com.example.stock.application.business.exception.ExistingStockException;
+import com.example.stock.application.business.exception.StockNotFoundException;
 import com.example.stock.domain.Stock;
 import com.example.stock.repository.StockRepository;
 

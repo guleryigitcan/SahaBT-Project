@@ -11,9 +11,9 @@ public class StandardCategoryApplication implements CategoryApplication {
 	private EventPublisher eventPublisher;
 
 	public StandardCategoryApplication(CategoryRepository categoryRepository, EventPublisher eventPublisher) {
-	        this.categoryRepository = categoryRepository;
-	        this.eventPublisher = eventPublisher;
-	    }
+		this.categoryRepository = categoryRepository;
+		this.eventPublisher = eventPublisher;
+	}
 
 	@Override
 	public Category getCategory(Category categoryID) {

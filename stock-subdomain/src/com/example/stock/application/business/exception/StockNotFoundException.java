@@ -1,4 +1,4 @@
-package com.example.stock.application.business;
+package com.example.stock.application.business.exception;
 
 @SuppressWarnings("serial")
 public class StockNotFoundException extends RuntimeException {
