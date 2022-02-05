@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 
 import com.example.book.application.BookApplication;
 import com.example.book.application.business.exceptions.BookNotFoundException;
+import com.example.book.domain.Book;
 import com.example.book.domain.Isbn;
 import com.example.bookstore.dto.request.AddBookRequest;
 import com.example.bookstore.dto.request.UpdateRequest;
@@ -26,27 +27,27 @@ public class StandardBookstoreService implements BookstoreService {
 	@Override
 	public GetBookResponse findBookByIsbn(String isbn) {
 		var book = bookApplication.findBookByIsbn(Isbn.of(isbn));
-		if(book.isEmpty())
+		if (book.isEmpty())
 			throw new BookNotFoundException("Can't find book", isbn);
 		return modelMapper.map(book.get(), GetBookResponse.class);
-		
+
 	}
 
 	@Override
 	public AddBookResponse addBook(AddBookRequest request) {
-		// TODO Auto-generated method stub
-		return null;
+		var book = modelMapper.map(request, Book.class);
+		var deletedBook = bookApplication.addBook(book);
+		return modelMapper.map(deletedBook, AddBookResponse.class);
 	}
 
 	@Override
 	public DeleteBookResponse deleteBookByIsbn(String isbn) {
-		// TODO Auto-generated method stub
-		return null;
+		var book= bookApplication.deleteBook(Isbn.of(isbn));
+		return modelMapper.map(book, DeleteBookResponse.class);
 	}
 
 	@Override
 	public UpdateBookResponse updateBook(UpdateRequest request) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
