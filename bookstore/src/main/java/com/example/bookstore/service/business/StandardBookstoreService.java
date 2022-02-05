@@ -7,7 +7,7 @@ import com.example.book.application.business.exceptions.BookNotFoundException;
 import com.example.book.domain.Book;
 import com.example.book.domain.Isbn;
 import com.example.bookstore.dto.request.AddBookRequest;
-import com.example.bookstore.dto.request.UpdateRequest;
+import com.example.bookstore.dto.request.UpdateBookRequest;
 import com.example.bookstore.dto.response.AddBookResponse;
 import com.example.bookstore.dto.response.DeleteBookResponse;
 import com.example.bookstore.dto.response.GetBookResponse;
@@ -47,7 +47,7 @@ public class StandardBookstoreService implements BookstoreService {
 	}
 
 	@Override
-	public UpdateBookResponse updateBook(UpdateRequest request) {
+	public UpdateBookResponse updateBook(UpdateBookRequest request) {
 		return null;
 	}
 
