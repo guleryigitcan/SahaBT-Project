@@ -6,9 +6,9 @@ import com.example.book.application.BookApplication;
 import com.example.book.application.business.exceptions.BookNotFoundException;
 import com.example.book.domain.Book;
 import com.example.book.domain.Isbn;
-import com.example.bookstore.dto.request.AddBookRequest;
+import com.example.bookstore.dto.request.AcquireBookRequest;
 import com.example.bookstore.dto.request.UpdateBookRequest;
-import com.example.bookstore.dto.response.AddBookResponse;
+import com.example.bookstore.dto.response.AcquireBookResponse;
 import com.example.bookstore.dto.response.DeleteBookResponse;
 import com.example.bookstore.dto.response.GetBookResponse;
 import com.example.bookstore.dto.response.UpdateBookResponse;
@@ -34,10 +34,10 @@ public class StandardBookstoreService implements BookstoreService {
 	}
 
 	@Override
-	public AddBookResponse addBook(AddBookRequest request) {
+	public AcquireBookResponse addBook(AcquireBookRequest request) {
 		var book = modelMapper.map(request, Book.class);
 		var deletedBook = bookApplication.addBook(book);
-		return modelMapper.map(deletedBook, AddBookResponse.class);
+		return modelMapper.map(deletedBook, AcquireBookResponse.class);
 	}
 
 	@Override
