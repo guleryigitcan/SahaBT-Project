@@ -48,7 +48,9 @@ public class StandardBookstoreService implements BookstoreService {
 
 	@Override
 	public UpdateBookResponse updateBook(UpdateBookRequest request) {
-		return null;
+		var book = modelMapper.map(request, Book.class);
+		var updatedBook = bookApplication.updateBook(book);
+		return modelMapper.map(updatedBook, UpdateBookResponse.class);
 	}
 
 }

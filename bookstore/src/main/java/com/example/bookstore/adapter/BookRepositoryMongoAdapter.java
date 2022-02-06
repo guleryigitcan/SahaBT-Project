@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 import com.example.book.domain.Book;
 import com.example.book.domain.Isbn;
 import com.example.book.repository.BookRepository;
+import com.example.bookstore.dto.request.AcquireBookRequest;
+import com.example.bookstore.dto.request.UpdateBookRequest;
 import com.example.bookstore.repository.BookstoreDocumentMongoRepository;
 
 @Repository
@@ -23,16 +25,18 @@ public class BookRepositoryMongoAdapter implements BookRepository {
 
 	@Override
 	public boolean existsByIsbn(Isbn isbn) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public Book update(Book book) {
+	public Book add(Book book) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Book add(Book book) {
+	public Book update(Book book) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -48,5 +52,11 @@ public class BookRepositoryMongoAdapter implements BookRepository {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
+
+	
+
+
 
 }
